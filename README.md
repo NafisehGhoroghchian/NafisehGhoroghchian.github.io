@@ -1,6 +1,6 @@
-# nagho.github.io
+# NafisehGhoroghchian.github.io
 
-My personal site: [nagho.github.io](https://nagho.github.io)
+My personal site: [nafisehghoroghchian.github.io](https://nafisehghoroghchian.github.io)
 
 Astro, no client-side framework, deployed to GitHub Pages on every push to
 `main`. Content lives in two places and nowhere else:
@@ -65,6 +65,10 @@ CV_DIR=~/path/to/cv npm run sync:cv
 
 GitHub Pages builds from `.github/workflows/deploy.yml`. One-time setup:
 **Settings → Pages → Source: GitHub Actions**. Free because this repo is public.
+
+The repo name must equal `<owner>.github.io` for the site to be served at the
+root, so the owner of this repo has to be the `NafisehGhoroghchian` account or
+organization.
 
 For a custom domain: add `public/CNAME` containing the domain, set it under
 Settings → Pages, and set a `SITE` environment variable (or edit the fallback in

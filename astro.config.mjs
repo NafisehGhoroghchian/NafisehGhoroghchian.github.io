@@ -3,10 +3,10 @@ import { satteri } from '@astrojs/markdown-satteri';
 import sitemap from '@astrojs/sitemap';
 import { satteriKatex } from './src/lib/satteri-katex.mjs';
 
-// Served at the root of nagho.github.io, so no base path. Set SITE when
+// Served at the root of nafisehghoroghchian.github.io, so no base path. Set SITE when
 // moving to a custom domain, or when deploying somewhere else (Cloudflare
 // Pages sets CF_PAGES_URL itself).
-const site = process.env.SITE ?? process.env.CF_PAGES_URL ?? 'https://nagho.github.io';
+const site = process.env.SITE ?? process.env.CF_PAGES_URL ?? 'https://nafisehghoroghchian.github.io';
 const base = process.env.BASE ?? '/';
 
 export default defineConfig({
