@@ -1,0 +1,39 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { render } from 'astro:content';
+import 'katex/dist/katex.min.css';
+import Base from '../../layouts/Base.astro';
+import { getPosts, formatDate } from '../../lib/posts';
+import { href } from '../../lib/paths';
+
+export const getStaticPaths = (async () => {
+  const posts = await getPosts();
+  return posts.map((post) => ({ params: { id: post.id }, props: { post } }));
+}) satisfies GetStaticPaths;
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Base title={post.data.title} description={post.data.description}>
+  <article>
+    <header class="post-head">
+      <p class="post-meta">
+        <a href={href('/blog')}>← blog</a>
+        &nbsp;·&nbsp;
+        <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
+      </p>
+      <h1>{post.data.title}</h1>
+      {
+        post.data.tags.length > 0 && (
+          <p class="tags">
+            {post.data.tags.map((tag) => <span class="chip">{tag}</span>)}
+          </p>
+        )
+      }
+    </header>
+    <div class="post-body">
+      <Content />
+    </div>
+  </article>
+</Base>

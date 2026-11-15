@@ -1,0 +1,17 @@
+---
+interface Props {
+  label: string;
+  id?: string;
+  moreHref?: string;
+  moreLabel?: string;
+}
+const { label, id, moreHref, moreLabel } = Astro.props;
+---
+
+<section id={id}>
+  <h2 class="label">
+    {label}
+    {moreHref && <a href={moreHref}>{moreLabel ?? 'all →'}</a>}
+  </h2>
+  <slot />
+</section>

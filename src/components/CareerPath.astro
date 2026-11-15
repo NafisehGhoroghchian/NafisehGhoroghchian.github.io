@@ -1,0 +1,22 @@
+---
+import type { PathStop } from '../lib/resume';
+
+interface Props { stops: PathStop[] }
+const { stops } = Astro.props;
+---
+
+<aside class="rail" aria-label="Career path">
+  <h2 class="label">path</h2>
+  <ol class="timeline">
+    {
+      stops.map((stop) => (
+        <li class:list={['stop', stop.kind === 'education' && 'edu', stop.current && 'now']}>
+          <span class="dot" aria-hidden="true" />
+          <span class="when">{stop.date}</span>
+          <span class="org">{stop.org}</span>
+          <span class="what">{stop.role}</span>
+        </li>
+      ))
+    }
+  </ol>
+</aside>

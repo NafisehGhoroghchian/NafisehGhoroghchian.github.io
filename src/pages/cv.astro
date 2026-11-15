@@ -1,0 +1,73 @@
+---
+import Base from '../layouts/Base.astro';
+import Section from '../components/Section.astro';
+import Entry from '../components/Entry.astro';
+import Publication from '../components/Publication.astro';
+import { resume } from '../lib/resume';
+import { inline } from '../lib/inline';
+import { href } from '../lib/paths';
+---
+
+<Base title="CV" description={`Full CV of ${resume.name}: ${resume.tagline}.`}>
+  <div class="hero">
+    <h1>Curriculum Vitae</h1>
+    <p class="role">{resume.tagline}</p>
+    <ul class="contact">
+      <li><a href={href('/cv.pdf')}>download as pdf</a></li>
+      <li><a href={`mailto:${resume.email}`}>{resume.email}</a></li>
+      {resume.links.map((l) => (
+        <li><a href={l.url} rel="me noopener">{l.handle}</a></li>
+      ))}
+    </ul>
+  </div>
+
+  <Section label="summary">
+    <div class="prose"><p set:html={inline(resume.summary)} /></div>
+  </Section>
+
+  <Section label="experience" id="experience">
+    {resume.experience.map((entry) => <Entry entry={entry} />)}
+  </Section>
+
+  <Section label="publications" id="publications">
+    {resume.publications.map((pub) => <Publication pub={pub} />)}
+  </Section>
+
+  <Section label="education" id="education">
+    {resume.education.map((entry) => <Entry entry={entry} />)}
+  </Section>
+
+  <Section label="technical skills" id="skills">
+    <dl>
+      {resume.skills.map((group) => (
+        <div class="skill-group">
+          <dt>{group.label}</dt>
+          <dd>{group.items.map((item) => <span class="chip">{item}</span>)}</dd>
+        </div>
+      ))}
+    </dl>
+  </Section>
+
+  <Section label="open-source projects" id="projects">
+    {resume.projects.map((p) => (
+      <article class="project">
+        <h3>{p.title}</h3>
+        <p class="src">
+          {p.url && <a href={p.url} rel="noopener">{p.url.replace('https://', '')}</a>}
+          <span class="when">{p.dates}</span>
+        </p>
+        <p set:html={inline(p.description)} />
+      </article>
+    ))}
+  </Section>
+
+  <Section label="honors & awards" id="awards">
+    <ul class="awards">
+      {resume.awards.map((award) => <li>{award}</li>)}
+    </ul>
+  </Section>
+
+  <Section label="leadership & service" id="leadership">
+    {resume.leadership.map((entry) => <Entry entry={entry} />)}
+  </Section>
+</Base>

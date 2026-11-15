@@ -1,0 +1,55 @@
+---
+import type { ImageMetadata } from 'astro';
+import type { Publication } from '../lib/resume';
+
+interface Props { pub: Publication }
+const { pub } = Astro.props;
+
+// Figures live in src/assets so the bundler gives us hashed URLs and the real
+// intrinsic dimensions — the aspect ratios vary a lot from paper to paper.
+const figures = import.meta.glob<{ default: ImageMetadata }>('../assets/papers/*.png', {
+  eager: true,
+});
+const figure = pub.thumb ? figures[`../assets/papers/${pub.thumb}`]?.default : undefined;
+
+const host = (url: string) => url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '');
+---
+
+<article class="pub">
+  <div class="pub-text">
+    <p class="pub-venue">
+      <span>{pub.venue}</span>
+      {pub.award && <span class="badge">{pub.award}</span>}
+      {pub.note && <span><span class="sep">|</span> {pub.note}</span>}
+      <span class="year">{pub.year}</span>
+    </p>
+
+    {
+      pub.url ? (
+        <a class="pub-title" href={pub.url} rel="noopener">{pub.title}</a>
+      ) : (
+        <span class="pub-title">{pub.title}</span>
+      )
+    }
+
+    <p class="pub-links">
+      {pub.url && <a href={pub.url} rel="noopener">{host(pub.url).startsWith('arxiv') ? 'arxiv' : 'paper'} →</a>}
+      {pub.repo && <a href={pub.repo} rel="noopener">code →</a>}
+    </p>
+  </div>
+
+  {
+    figure && (
+      <a class="pub-figure" href={pub.url} rel="noopener" tabindex="-1" aria-hidden="true">
+        <img
+          src={figure.src}
+          alt=""
+          width={figure.width}
+          height={figure.height}
+          loading="lazy"
+          decoding="async"
+        />
+      </a>
+    )
+  }
+</article>

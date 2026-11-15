@@ -1,0 +1,266 @@
+# ---------------------------------------------------------------------------
+# Single source of truth for the website's resume content.
+#   cv/cv.tex  -> the PDF (hand-maintained, same facts)
+#   this file  -> the website (/ and /cv)
+# Inline formatting allowed in any text field: **bold** and [label](url).
+# Deliberately omitted: phone number. It stays in the PDF only.
+# ---------------------------------------------------------------------------
+
+name: Nafiseh Ghoroghchian
+tagline: ML Scientist @ Layer 6 AI (TD)  ·  UofT PhD Alumni
+photo: profile.png
+focus:
+  - Agentic LLM Systems
+  - RL Post-Training
+  - Evaluation
+location: Toronto, Canada
+email: gh.nafiseh71@gmail.com
+
+links:
+  - { label: GitHub, url: "https://github.com/NaGho", handle: github.com/NaGho }
+  - { label: LinkedIn, url: "https://www.linkedin.com/in/nafisehGhoroghchian", handle: linkedin.com/in/nafisehGhoroghchian }
+  - { label: Google Scholar, url: "https://scholar.google.com/citations?user=CHANGE_ME", handle: scholar.google.com }
+  - { label: arXiv, url: "https://arxiv.org/a/ghoroghchian_n_1", handle: arxiv.org }
+
+summary: >-
+  Applied ML scientist and science lead building **agentic LLM systems over enterprise data**:
+  conversational access to relational and tabular sources, together with the **RL post-training,
+  evaluation, reliability, and safety monitoring** needed to deploy them. Setting the scientific
+  direction for a portfolio of enterprise AI use cases and leading research pods end to end, from
+  problem formulation and benchmark design through training to production pipelines. First-author
+  publication record. Ph.D. in ECE from the University of Toronto.
+
+# The right-hand rail on the homepage: PhD -> now, oldest first.
+path:
+  - date: 09/2017
+    org: University of Toronto
+    role: Ph.D., Electrical & Computer Engineering
+    kind: education
+  - date: 09/2019
+    org: Vector Institute · Draper Lab
+    role: Machine Learning Scientist
+  - date: 06/2022
+    org: Foqus Technologies
+    role: ML Data Scientist
+  - date: 01/2023
+    org: University of Toronto
+    role: Ph.D. conferred
+    kind: education
+  - date: 05/2023
+    org: NeuroFlex
+    role: Biomedical Data Scientist
+  - date: 05/2025
+    org: Layer 6 AI @ TD Bank
+    role: Research ML Scientist II
+    current: true
+
+experience:
+  - org: Layer 6 AI @ TD Bank
+    role: Research ML Scientist II
+    location: Toronto, Canada
+    dates: 05/2025 - Present
+    logo: layer6
+    items:
+      - >-
+        CPB **Science Lead**: set the scientific direction for AI-first modeling and systematic
+        evaluation of a portfolio of enterprise agentic AI use cases. Led the first team to
+        programmatically prototype an **agentic banking AI assistant** delivering guided customer
+        experiences using AWS agentic services.
+      - >-
+        Led a team of six as project lead and first author on **conversational task disambiguation
+        over tabular data**: a leakage-aware formulation, a benchmark suite, and an **RL**
+        post-training method that improves multi-turn clarifying-question behavior by **9%** over
+        baseline.
+      - >-
+        Led an applied pod of four building an **agentic platform for conversational access to TD's
+        relational databases**, with a configurable **user-simulation and AutoEval** framework for
+        robust multi-turn evaluation, positioned for handoff to downstream platform teams.
+      - >-
+        Research lead and first author on the **Best Paper Award** at FMSD @ ICML 2026, proposing
+        **SimpleTimeBench** and exposing blind spots of SoTA **time series foundation models**; built
+        an end-to-end forecasting and evaluation pipeline combining **fine-tuning** of a **tabular
+        foundation model** with global and local hyperparameter optimization, reaching **+40% over
+        baseline** across ~100 bank forecasting tasks on **Azure Databricks**.
+
+  - org: NeuroFlex
+    role: Biomedical Data Scientist
+    location: Toronto, Canada
+    dates: 05/2023 - 04/2025
+    logo: neuroflex
+    items:
+      - >-
+        Led research and implementation of **large-scale ML** for curation, feature engineering, and
+        classification of 10,000+ time series to separate concussed from healthy individuals.
+      - >-
+        Led the deployment of signal-processing and feature-engineering methods in a **CI/CD**
+        pipeline integrated with product APIs, achieving a **10x** improvement in test-retest
+        reliability and class separability.
+
+  - org: Foqus Technologies
+    role: Machine Learning Data Scientist
+    location: Toronto, Canada
+    dates: 06/2022 - 04/2023
+    logo: foqus
+    items:
+      - >-
+        Led the development of cloud-based **large vision models** (>10M parameters) for accelerated
+        MRI reconstruction, improving image quality by **5%** through **transfer learning,
+        fine-tuning, GANs, and diffusion models** and custom loss design.
+
+  - org: Vector Institute for Artificial Intelligence, Draper Lab
+    role: Machine Learning Scientist
+    location: Toronto, Canada
+    dates: 09/2019 - 12/2022
+    logo: vector
+    items:
+      - >-
+        Proposed a **Bayesian Graph ML (GNN)** approach that outperformed classical methods by **9%**
+        on ECoG seizure classification.
+        [github.com/NaGho/NodeCentricGraphLearningFromDataEUdata](https://github.com/NaGho/NodeCentricGraphLearningFromDataEUdata)
+      - >-
+        Designed a novel **unsupervised Graph ML** algorithm that improved network controllability
+        prediction from coarsely observed graphs by up to **30%** and reduced clustering detection
+        error by up to **20%**.
+
+publications:
+  - venue: Preprint
+    note: First author
+    title: "Conversational Task Disambiguation over Tabular Data: Leakage-Aware Formulation, Benchmark Suite, and Training"
+    url: "https://arxiv.org/abs/2610.10740"
+    thumb: conversational-task-disambiguation.png
+    year: 2026
+  - venue: FMSD Workshop @ ICML
+    note: First author
+    award: Best Paper Award
+    title: "Foundations without Fundamentals: Zero-Shot Blind Spots in Time Series FMs"
+    url: "https://arxiv.org/abs/2610.02058"
+    thumb: simpletimebench.png
+    year: 2026
+  - venue: AISTATS
+    note: First author
+    title: "Graph Community Detection from Coarse Measurements: Recovery Conditions for the Coarsened Weighted Stochastic Block Model"
+    url: "https://proceedings.mlr.press/v130/ghoroghchian21a.html"
+    thumb: graph-community-detection.png
+    repo: "https://github.com/NaGho/Community-Detection-From-Coarse-Measured-Graphs"
+    year: 2021
+  - venue: IEEE Trans. on Signal and Information Processing over Networks
+    note: First author
+    title: "Node-Centric Graph Learning from Data for Brain State Identification"
+    url: "https://arxiv.org/abs/2011.02179"
+    thumb: node-centric-graph-learning.png
+    repo: "https://github.com/NaGho/NodeCentricGraphLearningFromDataEUdata"
+    year: 2020
+  - venue: IEEE Symp. on Communications
+    note: First author
+    title: "A Hierarchical Graph Signal Processing Approach to Inference from Spatio-temporal Signals"
+    url: "https://arxiv.org/abs/2010.13164"
+    thumb: hierarchical-gsp.png
+    repo: "https://github.com/NaGho/HierarchicalGSPbasedFeatureExtraction"
+    year: 2018
+  - venue: IEEE Trans. on NanoBioscience
+    title: "Cooperative Abnormality Detection via Diffusive Molecular Communications"
+    url: "https://arxiv.org/abs/1703.10084"
+    thumb: molecular-communications.png
+    year: 2017
+
+education:
+  - org: University of Toronto
+    degree: Ph.D. in Electrical & Computer Engineering
+    gpa: "4.0 / 4.0"
+    location: Toronto, Canada
+    dates: 09/2017 - 01/2023
+    logo: uoft
+    items:
+      - >-
+        Built a graph-based ML feature-extraction system achieving **6% higher AUC** with a **75%
+        smaller** feature set than the winning entry of the iEEG Kaggle seizure-detection
+        competition.
+        [github.com/NaGho/HierarchicalGSPbasedFeatureExtraction](https://github.com/NaGho/HierarchicalGSPbasedFeatureExtraction)
+      - >-
+        Introduced a **graph clustering** pipeline for brain-network controllability that predicted
+        influencer regions with up to **42%** greater accuracy.
+  - org: Sharif University of Technology
+    degree: M.Sc. in Electrical Engineering
+    gpa: "18.7 / 20.0"
+    location: Tehran, Iran
+    dates: 09/2015 - 07/2017
+    logo: sharif
+  - org: Sharif University of Technology
+    degree: B.Sc. in Electrical Engineering, minor in Computer Engineering
+    gpa: "18.9 / 20.0"
+    location: Tehran, Iran
+    dates: 09/2011 - 08/2015
+    logo: sharif
+
+skills:
+  - label: Languages & Data
+    items: [Python, SQL, PySpark, C++, MATLAB, Pandas, NumPy]
+  - label: ML & AI
+    items:
+      - LLMs and agentic systems
+      - RL and post-training
+      - Foundation models (time series, tabular)
+      - Evaluation, benchmarking & LLM-as-judge
+      - Text-to-SQL
+      - RAG
+      - NLP
+      - Deep learning
+      - Graph ML
+      - Generative models (GANs, diffusion)
+      - Computer vision
+      - Time series forecasting
+      - Predictive & statistical modeling
+  - label: Frameworks & Infrastructure
+    items:
+      - PyTorch
+      - Hugging Face
+      - TensorFlow
+      - AWS (incl. ACXD)
+      - Azure Databricks & Azure ML
+      - Spark
+      - Docker
+      - Git
+      - CI/CD
+      - Agile
+      - Jira
+
+projects:
+  - title: Multi-Modal LLMs for Reasoning
+    url: "https://github.com/NaGho/reasoning_multimodal_LLMs"
+    dates: 10/2024 - 01/2025
+    description: >-
+      Improved zero-shot accuracy on MATH-Vision (math questions with visual context) with open
+      **vision-language models** (Qwen2, LLaVA) through a mixture of **fine-tuning, prompt
+      engineering, in-context learning, and RAG**.
+  - title: Graph Community Detection from Coarse Measurements
+    url: "https://github.com/NaGho/Community-Detection-From-Coarse-Measured-Graphs"
+    dates: 2020 - 2022
+    description: >-
+      Reference implementation accompanying the AISTATS paper: recovery conditions and clustering
+      algorithms for the coarsened weighted stochastic block model.
+  - title: Node-Centric Graph Learning from Data
+    url: "https://github.com/NaGho/NodeCentricGraphLearningFromDataEUdata"
+    dates: 2019 - 2021
+    description: >-
+      Bayesian **graph neural network** for learning task-relevant graph structure from multivariate
+      time series; accompanies the IEEE TSIPN paper and the ECoG seizure-classification results.
+
+awards:
+  - Best Paper Award, FMSD Workshop @ ICML 2026
+  - Doctoral Completion Award, University of Toronto
+  - Postgraduate Affiliate Fellowship, Vector Institute for AI
+  - Doctoral Connaught Scholarship, University of Toronto
+  - "National Elite Fellowship; ranked 10th of 260k on the nationwide undergraduate university entrance exam"
+
+leadership:
+  - org: Bahar Group @ University of Toronto
+    role: President
+    dates: 06/2018 - 2024
+    items:
+      - >-
+        Directed a team of 10+ volunteers across 12+ fundraising campaigns supporting the education
+        of 40+ underprivileged children; restructured the group to achieve a **2x** increase in
+        engagement.
+  - org: UofT ECE Graduate Student Union
+    role: Health & Wellness Officer, Departmental Representative
+    dates: 09/2021 - 08/2022

@@ -1,0 +1,90 @@
+---
+import Base from '../layouts/Base.astro';
+import Section from '../components/Section.astro';
+import Publication from '../components/Publication.astro';
+import CareerPath from '../components/CareerPath.astro';
+import { resume } from '../lib/resume';
+import { inline } from '../lib/inline';
+import { href } from '../lib/paths';
+import { getPosts, formatDate } from '../lib/posts';
+
+const posts = (await getPosts()).slice(0, 3);
+const featuredPubs = resume.publications.slice(0, 3);
+const featuredProjects = resume.projects.slice(0, 2);
+---
+
+<Base wide>
+  <div class="hero hero-split">
+    {
+      resume.photo && (
+        <img
+          class="avatar"
+          src={href(`/${resume.photo}`)}
+          alt={`Portrait of ${resume.name}`}
+          width="300"
+          height="370"
+          fetchpriority="high"
+        />
+      )
+    }
+    <div class="hero-text">
+      <h1>{resume.name}</h1>
+      <p class="role">{resume.tagline}</p>
+      <p class="focus">{resume.focus.map((f) => <span>{f}</span>)}</p>
+
+      <ul class="contact">
+        <li class="plain">{resume.location}</li>
+        <li><a href={`mailto:${resume.email}`}>{resume.email}</a></li>
+        {resume.links.map((l) => (
+          <li><a href={l.url} rel="me noopener">{l.handle}</a></li>
+        ))}
+        <li><a href={href('/cv.pdf')}>cv.pdf</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="columns">
+    <div class="col-main">
+      <Section label="about">
+        <div class="prose">
+          <p set:html={inline(resume.summary)} />
+        </div>
+      </Section>
+
+      <Section label="selected publications" moreHref={href('/cv#publications')} moreLabel="all →">
+        {featuredPubs.map((pub) => <Publication pub={pub} />)}
+      </Section>
+
+      <Section label="open source" moreHref={href('/cv#projects')} moreLabel="all →">
+        {featuredProjects.map((p) => (
+          <article class="project">
+            <h3>{p.title}</h3>
+            <p class="src">
+              {p.url && <a href={p.url} rel="noopener">{p.url.replace('https://', '')}</a>}
+              <span class="when">{p.dates}</span>
+            </p>
+            <p set:html={inline(p.description)} />
+          </article>
+        ))}
+      </Section>
+
+      {
+        posts.length > 0 && (
+          <Section label="writing" moreHref={href('/blog')} moreLabel="all posts →">
+            <ul class="posts">
+              {posts.map((post) => (
+                <li>
+                  <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
+                  <h3><a href={href(`/blog/${post.id}`)}>{post.data.title}</a></h3>
+                  <p>{post.data.description}</p>
+                </li>
+              ))}
+            </ul>
+          </Section>
+        )
+      }
+    </div>
+
+    <CareerPath stops={resume.path} />
+  </div>
+</Base>

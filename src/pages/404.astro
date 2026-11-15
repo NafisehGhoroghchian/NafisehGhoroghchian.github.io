@@ -1,0 +1,16 @@
+---
+import Base from '../layouts/Base.astro';
+import { href } from '../lib/paths';
+---
+
+<Base title="404" description="Page not found.">
+  <div class="hero">
+    <h1>404</h1>
+    <p class="role">no such file or directory</p>
+    <ul class="contact">
+      <li><a href={href('/')}>cd ~</a></li>
+      <li><a href={href('/cv')}>cv</a></li>
+      <li><a href={href('/blog')}>blog</a></li>
+    </ul>
+  </div>
+</Base>

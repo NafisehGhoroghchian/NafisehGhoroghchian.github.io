@@ -1,0 +1,38 @@
+---
+import type { Entry } from '../lib/resume';
+import { inline } from '../lib/inline';
+import { href } from '../lib/paths';
+
+interface Props { entry: Entry }
+const { entry } = Astro.props;
+---
+
+<article class="entry">
+  <div class="entry-head">
+    {
+      entry.logo ? (
+        <img class="entry-logo" src={href(`/logos/${entry.logo}.png`)} alt="" width="24" height="24" loading="lazy" />
+      ) : (
+        <span class="entry-logo" aria-hidden="true"></span>
+      )
+    }
+    <div class="entry-meta">
+      <h3 class="entry-org">{entry.org}</h3>
+      <p class="entry-role">
+        <span>{entry.role ?? entry.degree}</span>
+        {entry.gpa && <span class="gpa">GPA {entry.gpa}</span>}
+        <span class="when">{entry.dates}</span>
+        {entry.location && <span class="where">{entry.location}</span>}
+      </p>
+    </div>
+  </div>
+  {
+    entry.items && entry.items.length > 0 && (
+      <ul>
+        {entry.items.map((item) => (
+          <li set:html={inline(item)} />
+        ))}
+      </ul>
+    )
+  }
+</article>
