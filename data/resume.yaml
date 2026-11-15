@@ -17,7 +17,7 @@ location: Toronto, Canada
 email: gh.nafiseh71@gmail.com
 
 links:
-  - { label: GitHub, url: "https://github.com/NaGho", handle: github.com/NaGho }
+  - { label: GitHub, url: "https://github.com/NafisehGhoroghchian", handle: github.com/NafisehGhoroghchian }
   - { label: LinkedIn, url: "https://www.linkedin.com/in/nafisehGhoroghchian", handle: linkedin.com/in/nafisehGhoroghchian }
   - { label: Google Scholar, url: "https://scholar.google.com/citations?user=CHANGE_ME", handle: scholar.google.com }
   - { label: arXiv, url: "https://arxiv.org/a/ghoroghchian_n_1", handle: arxiv.org }
@@ -116,7 +116,7 @@ experience:
       - >-
         Proposed a **Bayesian Graph ML (GNN)** approach that outperformed classical methods by **9%**
         on ECoG seizure classification.
-        [github.com/NaGho/NodeCentricGraphLearningFromDataEUdata](https://github.com/NaGho/NodeCentricGraphLearningFromDataEUdata)
+        [github.com/NafisehGhoroghchian/NodeCentricGraphLearningFromDataEUdata](https://github.com/NafisehGhoroghchian/NodeCentricGraphLearningFromDataEUdata)
       - >-
         Designed a novel **unsupervised Graph ML** algorithm that improved network controllability
         prediction from coarsely observed graphs by up to **30%** and reduced clustering detection
@@ -141,21 +141,21 @@ publications:
     title: "Graph Community Detection from Coarse Measurements: Recovery Conditions for the Coarsened Weighted Stochastic Block Model"
     url: "https://proceedings.mlr.press/v130/ghoroghchian21a.html"
     thumb: graph-community-detection.png
-    repo: "https://github.com/NaGho/Community-Detection-From-Coarse-Measured-Graphs"
+    repo: "https://github.com/NafisehGhoroghchian/Community-Detection-From-Coarse-Measured-Graphs"
     year: 2021
   - venue: IEEE Trans. on Signal and Information Processing over Networks
     note: First author
     title: "Node-Centric Graph Learning from Data for Brain State Identification"
     url: "https://arxiv.org/abs/2011.02179"
     thumb: node-centric-graph-learning.png
-    repo: "https://github.com/NaGho/NodeCentricGraphLearningFromDataEUdata"
+    repo: "https://github.com/NafisehGhoroghchian/NodeCentricGraphLearningFromDataEUdata"
     year: 2020
   - venue: IEEE Symp. on Communications
     note: First author
     title: "A Hierarchical Graph Signal Processing Approach to Inference from Spatio-temporal Signals"
     url: "https://arxiv.org/abs/2010.13164"
     thumb: hierarchical-gsp.png
-    repo: "https://github.com/NaGho/HierarchicalGSPbasedFeatureExtraction"
+    repo: "https://github.com/NafisehGhoroghchian/HierarchicalGSPbasedFeatureExtraction"
     year: 2018
   - venue: IEEE Trans. on NanoBioscience
     title: "Cooperative Abnormality Detection via Diffusive Molecular Communications"
@@ -175,7 +175,7 @@ education:
         Built a graph-based ML feature-extraction system achieving **6% higher AUC** with a **75%
         smaller** feature set than the winning entry of the iEEG Kaggle seizure-detection
         competition.
-        [github.com/NaGho/HierarchicalGSPbasedFeatureExtraction](https://github.com/NaGho/HierarchicalGSPbasedFeatureExtraction)
+        [github.com/NafisehGhoroghchian/HierarchicalGSPbasedFeatureExtraction](https://github.com/NafisehGhoroghchian/HierarchicalGSPbasedFeatureExtraction)
       - >-
         Introduced a **graph clustering** pipeline for brain-network controllability that predicted
         influencer regions with up to **42%** greater accuracy.
@@ -226,20 +226,20 @@ skills:
 
 projects:
   - title: Multi-Modal LLMs for Reasoning
-    url: "https://github.com/NaGho/reasoning_multimodal_LLMs"
+    url: "https://github.com/NafisehGhoroghchian/reasoning_multimodal_LLMs"
     dates: 10/2024 - 01/2025
     description: >-
       Improved zero-shot accuracy on MATH-Vision (math questions with visual context) with open
       **vision-language models** (Qwen2, LLaVA) through a mixture of **fine-tuning, prompt
       engineering, in-context learning, and RAG**.
   - title: Graph Community Detection from Coarse Measurements
-    url: "https://github.com/NaGho/Community-Detection-From-Coarse-Measured-Graphs"
+    url: "https://github.com/NafisehGhoroghchian/Community-Detection-From-Coarse-Measured-Graphs"
     dates: 2020 - 2022
     description: >-
       Reference implementation accompanying the AISTATS paper: recovery conditions and clustering
       algorithms for the coarsened weighted stochastic block model.
   - title: Node-Centric Graph Learning from Data
-    url: "https://github.com/NaGho/NodeCentricGraphLearningFromDataEUdata"
+    url: "https://github.com/NafisehGhoroghchian/NodeCentricGraphLearningFromDataEUdata"
     dates: 2019 - 2021
     description: >-
       Bayesian **graph neural network** for learning task-relevant graph structure from multivariate
